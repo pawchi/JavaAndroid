@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Test_drag</string>
+    <string name="button1">Go to RecyclerView</string>
+</resources>
