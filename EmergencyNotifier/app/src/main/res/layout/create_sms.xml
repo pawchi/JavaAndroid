@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#66cccc"
     tools:context=".Sms">
 
 
@@ -227,8 +228,6 @@
                     android:textStyle="bold" />
 
 
-
-
             </LinearLayout>
         </LinearLayout>
 
@@ -237,6 +236,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="SEND"
+            android:background="#ccff00"
+            android:layout_marginTop="10dp"
             android:onClick="onSend"/>
 
 
