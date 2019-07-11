@@ -225,7 +225,8 @@
                     android:text="@string/count_down_label"
                     android:textAlignment="center"
                     android:textColor="#3F51B5"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:onClick="onCountdownTimerClick"/>
 
 
             </LinearLayout>
