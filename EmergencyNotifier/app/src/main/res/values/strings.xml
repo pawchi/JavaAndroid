@@ -19,8 +19,11 @@
     <string name="count_down_label">COUNTDOWN TIMER</string>
 
     <!--Popup window countdown timer-->
-    <string name="setMinutes_label">SET MINUTES</string>
-    <string name="setHours_label">SET HOURS</string>
-    <string name="setMinutes_input">e.g. 5</string>
+    <string name="setSeconds_label">ENTER SECONDS:</string>
+    <string name="setSeconds_input">0</string>
+    <string name="setMinutes_label">ENTER MINUTES:</string>
+    <string name="setMinutes_input">0</string>
+    <string name="setHours_label">ENTER HOURS:</string>
     <string name="setHours_input">0</string>
+
 </resources>

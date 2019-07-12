@@ -14,6 +14,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     Button smsButton;
+    Button callButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,10 +35,20 @@ public class MainActivity extends AppCompatActivity {
         */
 
         smsButton = (Button) findViewById(R.id.smsButton);
+        callButton = (Button) findViewById(R.id.callButton);
+
         smsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), Sms.class);
+                startActivity(intent);
+            }
+        });
+
+        callButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), CreateNotification.class);
                 startActivity(intent);
             }
         });

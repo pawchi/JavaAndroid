@@ -6,35 +6,100 @@
     android:layout_height="wrap_content"
     android:background="@drawable/timer_border">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:weightSum="2">
+        android:orientation="vertical">
 
-    <TextView
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="30dp"
-        android:textAlignment="center"
-        android:textSize="22sp"
-        android:text="@string/setMinutes_label"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_weight="1"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
 
-    <EditText
-        android:id="@+id/input_minutes"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="30dp"
-        android:textAlignment="center"
-        android:textSize="22sp"
-        android:inputType="number"
-        android:hint="@string/setMinutes_input"
-        android:layout_weight="1"/>
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:textAlignment="center"
+                android:textSize="22sp"
+                android:text="@string/setSeconds_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_weight="1"/>
+
+            <EditText
+                android:id="@+id/input_seconds"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:textAlignment="center"
+                android:textSize="22sp"
+                android:inputType="number"
+                android:hint="@string/setSeconds_input"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:textAlignment="center"
+                android:textSize="22sp"
+                android:text="@string/setMinutes_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_weight="1"/>
+
+            <EditText
+                android:id="@+id/input_minutes"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:textAlignment="center"
+                android:textSize="22sp"
+                android:inputType="number"
+                android:hint="@string/setMinutes_input"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:textAlignment="center"
+                android:textSize="22sp"
+                android:text="@string/setHours_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_weight="1"/>
+
+            <EditText
+                android:id="@+id/input_hours"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:layout_weight="1"
+                android:hint="@string/setHours_input"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textSize="22sp" />
+        </LinearLayout>
 
     </LinearLayout>
 

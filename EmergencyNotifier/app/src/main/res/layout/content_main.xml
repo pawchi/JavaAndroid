@@ -62,7 +62,7 @@
                 android:layout_marginTop="5dp"/>
 
             <Button
-                android:id="@+id/call"
+                android:id="@+id/callButton"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:backgroundTint="#088da5"
@@ -74,7 +74,7 @@
                 android:paddingEnd="50dp"/>
 
             <Button
-                android:id="@+id/email"
+                android:id="@+id/emailButton"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:backgroundTint="#088da5"
