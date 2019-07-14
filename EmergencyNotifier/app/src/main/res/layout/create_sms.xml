@@ -244,7 +244,7 @@
                 android:id="@+id/sms_send_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="SEND"
+                android:text="@string/send_button"
                 android:background="#ccff00"
                 android:layout_marginTop="10dp"
                 android:onClick="onSend"/>

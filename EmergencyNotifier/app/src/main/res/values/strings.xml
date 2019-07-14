@@ -4,7 +4,7 @@
     <string name="action_settings">Settings</string>
     <string name="sms_button">SEND SMS</string>
     <string name="email_button">SEND EMAIL</string>
-    <string name="call_button">CALL OR SEND VOICE MESSAGE</string>
+    <string name="call_button">SEND VOICE MESSAGE</string>
     <string name="choose_action">CHOOSE HOW TO NOTIFY</string>
 
     <!--SMS View-->
@@ -17,13 +17,30 @@
     <string name="sending_time_setup_label">SETUP SENDING TIME</string>
     <string name="calendar_label">CALENDAR</string>
     <string name="count_down_label">COUNTDOWN TIMER</string>
+    <string name="send_button">SEND</string>
 
     <!--Popup window countdown timer-->
     <string name="setSeconds_label">ENTER SECONDS:</string>
-    <string name="setSeconds_input">0</string>
+    <string name="setSeconds_input" translatable="false">0</string>
     <string name="setMinutes_label">ENTER MINUTES:</string>
-    <string name="setMinutes_input">0</string>
+    <string name="setMinutes_input" translatable="false">0</string>
     <string name="setHours_label">ENTER HOURS:</string>
-    <string name="setHours_input">0</string>
+    <string name="setHours_input" translatable="false">0</string>
+
+    <!--SetUp select language-->
+    <string name="settings_label">SETTINGS:</string>
+    <string name="select_language">SELECT LANGUAGE</string>
+    <string name="rate_app">RATE APPLICATION</string>
+    <string name="ok_button" translatable="false">OK</string>
+    <string name="cancel_button" translatable="false">CANCEL</string>
+
+
+    <string name="language_polish">POLISH</string>
+    <string name="language_english">ENGLISH</string>
+    <string name="language_french">FRENCH</string>
+    <string name="language_german">GERMAN</string>
+    <string name="language_portuguese">PORTUGUESE</string>
+    <string name="language_russian">RUSSIAN</string>
+    <string name="language_spanish">SPANISH</string>
 
 </resources>
