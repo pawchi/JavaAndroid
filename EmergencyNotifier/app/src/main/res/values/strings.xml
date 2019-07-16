@@ -26,6 +26,8 @@
     <string name="setMinutes_input" translatable="false">0</string>
     <string name="setHours_label">ENTER HOURS:</string>
     <string name="setHours_input" translatable="false">0</string>
+    <string name="ok_button_countdown" translatable="false">OK</string>
+    <string name="cancel_button_countdown" translatable="false">CANCEL</string>
 
     <!--SetUp select language-->
     <string name="settings_label">SETTINGS:</string>

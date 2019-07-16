@@ -38,7 +38,8 @@
                 android:textSize="22sp"
                 android:inputType="number"
                 android:hint="@string/setSeconds_input"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:maxLength="2"/>
         </LinearLayout>
 
         <LinearLayout
@@ -68,7 +69,8 @@
                 android:textSize="22sp"
                 android:inputType="number"
                 android:hint="@string/setMinutes_input"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:maxLength="2"/>
         </LinearLayout>
 
         <LinearLayout
@@ -98,8 +100,29 @@
                 android:hint="@string/setHours_input"
                 android:inputType="number"
                 android:textAlignment="center"
-                android:textSize="22sp" />
+                android:textSize="22sp"
+                android:maxLength="2"/>
         </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+        <Button
+            android:id="@+id/ok_button_countdown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ok_button_countdown"
+            android:layout_weight="1"
+            android:layout_marginStart="10dp"/>
+        <Button
+            android:id="@+id/cancel_button_countdown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel_button_countdown"
+            android:layout_weight="1"
+            android:layout_marginEnd="10dp"/>
+    </LinearLayout>
 
     </LinearLayout>
 

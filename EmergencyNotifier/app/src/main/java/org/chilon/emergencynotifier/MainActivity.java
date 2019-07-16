@@ -16,7 +16,9 @@ public class MainActivity extends AppCompatActivity {
 
     Button smsButton;
     Button callButton;
+    Button emailButton;
     MenuItem item;
+    public static final String MAIN_RESPONSE = "method_of_sending";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,22 +40,43 @@ public class MainActivity extends AppCompatActivity {
 
         smsButton = (Button) findViewById(R.id.smsButton);
         callButton = (Button) findViewById(R.id.callButton);
+        emailButton = (Button) findViewById(R.id.emailButton);
 
         smsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Sms.class);
+                Intent intent = new Intent(getApplicationContext(), CreateNotification.class);
+                intent.putExtra(MAIN_RESPONSE, 1);
                 startActivity(intent);
             }
         });
 
+        /*
         callButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), CreateNotification.class);
                 startActivity(intent);
             }
+        });*/
+        callButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), CreateNotification.class);
+                intent.putExtra(MAIN_RESPONSE, 2);
+                startActivity(intent);
+            }
         });
+
+        emailButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), CreateNotification.class);
+                intent.putExtra(MAIN_RESPONSE, 3);
+                startActivity(intent);
+            }
+        });
+
 
     }
 

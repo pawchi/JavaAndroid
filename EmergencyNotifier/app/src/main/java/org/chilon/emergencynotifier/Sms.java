@@ -20,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class Sms extends AppCompatActivity {
+    /*
     final  int SEND_SMS_PERMISSION_REQUEST_CODE = 1;
 
     EditText number;
@@ -87,4 +88,5 @@ public class Sms extends AppCompatActivity {
         }
 
     }
+    */
 }
