@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -31,6 +32,7 @@ public class CreateNotification extends AppCompatActivity {
     int secondsCountdown;
     int minutesCountdown;
     int hoursCountdown;
+    private long timeLeftInMillis = 0;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -74,7 +76,6 @@ public class CreateNotification extends AppCompatActivity {
         } else {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.SEND_SMS}, SEND_SMS_PERMISSION_REQUEST_CODE);
         }
-
     }
 
     public void onSend(View v){
@@ -120,11 +121,13 @@ public class CreateNotification extends AppCompatActivity {
             }
         });
 
-        okCountdown = findViewById(R.id.ok_button_countdown);
-        cancelCountdown = findViewById(R.id.cancel_button_countdown);
-        final EditText secondCountdownInput = findViewById(R.id.input_seconds);
-        final EditText minutesCountdownInput = findViewById(R.id.input_minutes);
-        final EditText hoursCountdownInput = findViewById(R.id.input_hours);
+        //Popup countdown window action
+        okCountdown = popupView.findViewById(R.id.ok_button_countdown);
+        cancelCountdown = popupView.findViewById(R.id.cancel_button_countdown);
+
+        final EditText secondCountdownInput = popupView.findViewById(R.id.input_seconds);
+        final EditText minutesCountdownInput = popupView.findViewById(R.id.input_minutes);
+        final EditText hoursCountdownInput = popupView.findViewById(R.id.input_hours);
 
 
         cancelCountdown.setOnClickListener(new View.OnClickListener() {
@@ -137,10 +140,31 @@ public class CreateNotification extends AppCompatActivity {
         okCountdown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                secondsCountdown = Integer.parseInt(secondCountdownInput.getText().toString());
+                if (!secondCountdownInput.getText().toString().isEmpty() && secondCountdownInput.getText().toString() != "" ) {
+                    secondsCountdown = Integer.parseInt(secondCountdownInput.getText().toString());
+                } else {
+                    secondsCountdown = 0;
+                }
+
                 minutesCountdown = Integer.parseInt(minutesCountdownInput.getText().toString());
                 hoursCountdown = Integer.parseInt(hoursCountdownInput.getText().toString());
+                popupWindow.dismiss();
             }
         });
     }
+
+    private void startTimer(){
+        new CountDownTimer(timeLeftInMillis, 1000){
+
+            public void onTick(long millisUntilFinished){
+
+            }
+
+            public void onFinish(){
+
+            }
+
+        }.start();
+    }
+
 }
