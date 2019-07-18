@@ -29,4 +29,10 @@
     <string name="language_russian">ROSYJSKI</string>
     <string name="language_spanish">HISZPAŃSKI</string>
     <string name="send_button">WYŚLIJ</string>
+    <string name="cancel_button_countdown">ANULUJ WYSŁANIE</string>
+    <string name="choosen_sending_time_text_label">CZAS USTAWIONY DO WYSŁANIA:</string>
+    <string name="format_show_sending_time">%02dg : %02dm : %02ds</string>
+    <string name="toast_message_sent">WIADOMOŚĆ ZOSTAŁA WYSŁANA</string>
+    <string name="toast_message_will_be_send">WIADOMOŚĆ ZOSTANIE WYSŁANA W USTAWIONYM CZASIE</string>
+    <string name="toast_no_permission">BRAK UPRAWNIEŃ DO WYSŁANIA WIADOMOŚCI</string>
 </resources>

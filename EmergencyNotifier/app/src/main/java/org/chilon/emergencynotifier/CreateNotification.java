@@ -18,7 +18,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.Locale;
 
 public class CreateNotification extends AppCompatActivity {
 
@@ -33,6 +36,7 @@ public class CreateNotification extends AppCompatActivity {
     int minutesCountdown;
     int hoursCountdown;
     private long timeLeftInMillis = 0;
+    TextView setSendingTime;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -81,9 +85,16 @@ public class CreateNotification extends AppCompatActivity {
     public void onSend(View v){
         number = findViewById(R.id.input_phone_number_field);
         message = findViewById(R.id.sms_input_text_field);
+        String messageWillBeSend = getResources().getString(R.string.toast_message_will_be_send);
+        Toast.makeText(this, messageWillBeSend, Toast.LENGTH_LONG).show();
+        startTimer();
+    }
+
+    public void sendSms(){
         String phoneNumber = number.getText().toString();
         String smsMessage  = message.getText().toString();
-
+        String messageSent = getResources().getString(R.string.toast_message_sent);
+        String noPermission = getResources().getString(R.string.toast_no_permission);
         if (phoneNumber == null || phoneNumber.length() == 0 || smsMessage == null || smsMessage.length() == 0){
             return ;
         }
@@ -91,9 +102,9 @@ public class CreateNotification extends AppCompatActivity {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED){
             SmsManager smsManager = SmsManager.getDefault();
             smsManager.sendTextMessage(phoneNumber, null, smsMessage, null,null);
-            Toast.makeText(this, "Message Sent!", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, messageSent, Toast.LENGTH_LONG).show();
         } else {
-            Toast.makeText(this, "Permission Denied", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, noPermission, Toast.LENGTH_LONG).show();
         }
     }
 
@@ -146,22 +157,54 @@ public class CreateNotification extends AppCompatActivity {
                     secondsCountdown = 0;
                 }
 
-                minutesCountdown = Integer.parseInt(minutesCountdownInput.getText().toString());
-                hoursCountdown = Integer.parseInt(hoursCountdownInput.getText().toString());
+                if (!minutesCountdownInput.getText().toString().isEmpty() && minutesCountdownInput.getText().toString() != ""){
+                    minutesCountdown = Integer.parseInt(minutesCountdownInput.getText().toString());
+                } else {
+                    minutesCountdown = 0;
+                }
+
+                if (!hoursCountdownInput.getText().toString().isEmpty() && hoursCountdownInput.getText().toString() != ""){
+                    hoursCountdown = Integer.parseInt(hoursCountdownInput.getText().toString());
+                } else {
+                    hoursCountdown = 0;
+                }
+
+                updateSendingTime(secondsCountdown, minutesCountdown, hoursCountdown);
                 popupWindow.dismiss();
             }
         });
     }
 
+    private void updateSendingTime(int seconds, int minutes, int hours){
+        setSendingTime = findViewById(R.id.choosen_sending_time_value);
+        String formatForTime = getResources().getString(R.string.format_show_sending_time);
+        //String formatedTimeToSend = String.format(Locale.getDefault(), "%02dh : %02dm : %02ds", seconds, minutes, hours);
+        String formatedTimeToSend = String.format(Locale.getDefault(), formatForTime, seconds, minutes, hours);
+        setSendingTime.setText(formatedTimeToSend);
+        timeLeftInMillis = (seconds * 1000)+(minutes * 60 * 1000)+(hours * 3600 * 1000);
+    }
+
+    private void updateCountDownText(){
+
+    }
+
+
     private void startTimer(){
         new CountDownTimer(timeLeftInMillis, 1000){
 
             public void onTick(long millisUntilFinished){
+                timeLeftInMillis = millisUntilFinished;
+                updateCountDownText();
 
             }
 
             public void onFinish(){
+                try {
+                    sendSms();
 
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
 
         }.start();

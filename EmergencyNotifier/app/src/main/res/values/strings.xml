@@ -18,6 +18,8 @@
     <string name="calendar_label">CALENDAR</string>
     <string name="count_down_label">COUNTDOWN TIMER</string>
     <string name="send_button">SEND</string>
+    <string name="format_show_sending_time">%02dh : %02dm : %02ds</string>
+
 
     <!--Popup window countdown timer-->
     <string name="setSeconds_label">ENTER SECONDS:</string>
@@ -27,7 +29,7 @@
     <string name="setHours_label">ENTER HOURS:</string>
     <string name="setHours_input" translatable="false">0</string>
     <string name="ok_button_countdown" translatable="false">OK</string>
-    <string name="cancel_button_countdown" translatable="false">CANCEL</string>
+    <string name="cancel_button_countdown">CANCEL SENDING</string>
 
     <!--SetUp select language-->
     <string name="settings_label">SETTINGS:</string>
@@ -44,5 +46,14 @@
     <string name="language_portuguese">PORTUGUESE</string>
     <string name="language_russian">RUSSIAN</string>
     <string name="language_spanish">SPANISH</string>
+
+    <!--Popup message sending info and cancel-->
+    <string name="left_time_label" translatable="false">TIME LEFT TO SEND: </string>
+    <string name="choosen_sending_time_text_label">YOUR SET TIME TO SEND: </string>
+    <string name="choosen_sending_time_value" translatable="false">0</string>
+    <string name="toast_message_will_be_send">YOUR MESSAGE WILL BE SEND IN YOUR SET UP TIME </string>
+    <string name="toast_message_sent">MESSAGE SENT! </string>
+    <string name="toast_no_permission">PERMISSION DENIED! </string>
+
 
 </resources>

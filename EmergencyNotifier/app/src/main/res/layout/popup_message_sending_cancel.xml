@@ -13,52 +13,39 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="2">
+        android:orientation="horizontal">
 
         <TextView
-            android:layout_width="200dp"
+            android:layout_width="240dp"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:textAlignment="center"
+            android:textAlignment="textEnd"
             android:textSize="22sp"
-            android:text="@string/setSeconds_label"
+            android:text="@string/left_time_label"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_weight="1"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/message_sending_time_left"
+            android:id="@+id/time_left_to_send"
             android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:textAlignment="center"
-            android:textSize="22sp"
-            android:hint="@string/setSeconds_input"
-            android:layout_weight="1"
-            android:maxLength="2"/>
+            android:textAlignment="textStart"
+            android:textSize="22sp" />
     </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="2">
-            <Button
-                android:id="@+id/ok_button_countdown"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/ok_button_countdown"
-                android:layout_weight="1"
-                android:layout_marginStart="10dp"/>
+            android:gravity="center">
+
             <Button
                 android:id="@+id/cancel_button_countdown"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/cancel_button_countdown"
-                android:layout_weight="1"
-                android:layout_marginEnd="10dp"/>
+                android:text="@string/cancel_button_countdown" />
         </LinearLayout>
 
     </LinearLayout>
