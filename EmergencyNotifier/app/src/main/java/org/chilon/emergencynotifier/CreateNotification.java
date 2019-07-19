@@ -179,7 +179,7 @@ public class CreateNotification extends AppCompatActivity {
         setSendingTime = findViewById(R.id.choosen_sending_time_value);
         String formatForTime = getResources().getString(R.string.format_show_sending_time);
         //String formatedTimeToSend = String.format(Locale.getDefault(), "%02dh : %02dm : %02ds", seconds, minutes, hours);
-        String formatedTimeToSend = String.format(Locale.getDefault(), formatForTime, seconds, minutes, hours);
+        String formatedTimeToSend = String.format(Locale.getDefault(), formatForTime, hours, minutes, seconds);
         setSendingTime.setText(formatedTimeToSend);
         timeLeftInMillis = (seconds * 1000)+(minutes * 60 * 1000)+(hours * 3600 * 1000);
     }

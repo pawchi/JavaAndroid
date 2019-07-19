@@ -18,7 +18,7 @@
     <string name="calendar_label">CALENDAR</string>
     <string name="count_down_label">COUNTDOWN TIMER</string>
     <string name="send_button">SEND</string>
-    <string name="format_show_sending_time">%02dh : %02dm : %02ds</string>
+    <string name="format_show_sending_time" translatable="false">%02dh : %02dm : %02ds</string>
 
 
     <!--Popup window countdown timer-->
